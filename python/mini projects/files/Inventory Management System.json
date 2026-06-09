@@ -1,0 +1,15 @@
+{
+    "fruits": {
+        "apple": 1,
+        "mango": 4,
+        "banana": 3
+    },
+    "cloth": {
+        "men": 1,
+        "women": 3,
+        "kids": 1
+    },
+    "shoes": {
+        "chappal": 2
+    }
+}

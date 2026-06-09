@@ -10,7 +10,7 @@ os.makedirs(os.path.dirname(file_name), exist_ok=True)
 def load_file():
     try:
         with open(file_name,'r') as file:
-            json.load(file)
+            return json.load(file)
     except FileNotFoundError:
         return {}
     except json.JSONDecodeError:
