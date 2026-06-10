@@ -1,7 +1,7 @@
 import json
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-file_name = os.path.join(BASE_DIR, "files", "task.json")
+file_name = os.path.join(BASE_DIR, "files", "to_do_list.json")
 
 os.makedirs(os.path.dirname(file_name), exist_ok=True)
 

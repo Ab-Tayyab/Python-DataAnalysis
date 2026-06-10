@@ -1,0 +1,18 @@
+{
+    "tayyab@gmail.com": [
+        {
+            "name": "tayyab",
+            "feedback": "good product, i love it."
+        }
+    ],
+    "abdullah@gmail.com": [
+        {
+            "name": "abdullah",
+            "feedback": "excellent product, i love it."
+        },
+        {
+            "name": "abdullah",
+            "feedback": "bad product, i hate it."
+        }
+    ]
+}
