@@ -51,12 +51,10 @@ def show_feedback():
                     print(f"{index}- {feedback["name"]}: \n   {feedback["feedback"]} ")
         elif choice == "2":
             email = input("Enter E-mail: ")
-            for emails, feedbacks in user_feedback.items():
-                if emails == email:
-                    for index,feedback in enumerate(feedbacks,start=1):
-                        print(f"{index}- {feedback['name']}: \n   {feedback['feedback']}")
-                    isFound = True
-                    break
+            if email in user_feedback:
+                for index,feedback in enumerate(user_feedback[email],start=1):
+                    print(f"{index}- {feedback['name']}: \n   {feedback['feedback']}")
+                isFound = True
             if not isFound:
                 print("Invalid E-mail or user not found!")
         else:
