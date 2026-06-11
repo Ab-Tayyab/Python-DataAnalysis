@@ -1,5 +1,8 @@
 import json
 import os
+
+# ================= FILE HANDLING =================
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 file_name = os.path.join(BASE_DIR, "files", "to_do_list.json")
 
@@ -24,7 +27,8 @@ if not to_do_list:
     to_do_list = ["morning walk", "drink juice"]
 
 
-# Add Task
+# ================= ADD TASK =================
+
 def add_task():
     task = input("Enter a new task: ").strip().lower()
 
@@ -39,7 +43,8 @@ def add_task():
         print(f"✅ '{task}' added successfully!")
 
 
-# Remove Task
+# ================= REMOVE completed TASK =================
+
 def remove_task():
     if not to_do_list:
         print("📌 No tasks remaining.")
@@ -60,7 +65,8 @@ def remove_task():
         print("❌ Please enter a valid number.")
 
 
-# Show Remaining Tasks
+# ================= SHOW REMAINING TASKS =================
+
 def remaining_tasks():
     if not to_do_list:
         print("📌 No tasks remaining.")
@@ -71,7 +77,8 @@ def remaining_tasks():
         print(f"{i}. {task}")
 
 
-# Find Task
+# ================= FIND TASK =================
+
 def find_task():
     task = input("Enter task to search: ").strip().lower()
 
@@ -81,7 +88,8 @@ def find_task():
         print(f"❌ '{task}' not found.")
 
 
-# Menu
+# ================= MENU =================
+
 def menu():
     print("\n====================")
     print("      TO-DO LIST")
@@ -93,7 +101,6 @@ def menu():
     print("0. Exit")
 
 
-# Main Program
 while True:
     menu()
 

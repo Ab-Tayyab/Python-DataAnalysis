@@ -1,6 +1,8 @@
 import json
 import os
 
+# ================= FILE HANDLING =================
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 file_name = os.path.join(BASE_DIR, "files", "user_feedback_system.json")
 
@@ -37,8 +39,8 @@ if not user_feedback:
     }
 
 
+# ================= FHOW FEEDBACK =================
 
-# show feedback 
 
 def show_feedback():
     if user_feedback:
@@ -63,7 +65,8 @@ def show_feedback():
         print("No Feedback available!")
 
 
-# add feedback 
+# ================= ADD FEEDBACK =================
+
 
 def add_feedback():
     email = input("Enter Email: ").strip()
@@ -82,7 +85,7 @@ def add_feedback():
         user_feedback[email] = [new_feedback]
         print("Feedback submitted successfully!")
 
-# delete feedback 
+# ================= DELETE FEDBACK =================
 
 def delete_feedback():
     email = input("Enter Email: ").strip()
@@ -115,7 +118,29 @@ def delete_feedback():
                 print("Invalid choice!")
 
 
-# count total positive and negative feedback
+# ================= EDIT FEEDBACK =================
+
+def edit_feedback():
+    email = input("Enter your email: ")
+    if email in user_feedback:
+        for index,feedback in enumerate(user_feedback[email],start=0):
+            print(f"{index}- {feedback["name"]} \n   {feedback["feedback"]}")
+        
+        index = int(input("Enter index number: start 0 to so on which is mention above: "))
+        get_feedback = user_feedback[email][index]
+        print(f"Selected feedback is=> {get_feedback["name"]} : {get_feedback["feedback"]}")
+
+        feedback = input("Enter feedback: ")
+        get_feedback["feedback"] = feedback
+        print(f"Selected feedback is=. {get_feedback["name"]} : {get_feedback["feedback"]}")
+
+        
+    else:
+        print("Invalid email or feedback not found!")
+
+
+# ================= COUNT TOTAL, POSITIVE AND NEGATIVE FEEDBACK =================
+
 
 def count_feedback():
     count= 0
@@ -139,8 +164,8 @@ def count_feedback():
         print(f"Total numbers of feedback is {count}")
 
 
+# ================= MENU =================
 
-#Menu
 def menu():
         print("""
 ==========================
@@ -149,13 +174,12 @@ def menu():
 1. Show Feedbacks
 2. Add Feedback
 3. Delete Feedback
-4. Count Feedback
+4. Edit Feedback
+5. Count Feedback
 0. Exit
 ==========================
 """)
 
-
-# main program
 
 while True:
     menu()
@@ -173,7 +197,9 @@ while True:
         case 3:
             delete_feedback()
         case 4:
-            count_feedback()
+            edit_feedback()
+        case 5:
+            count_feedback
         case 0:
             save_file()
             print("👋 Good Bye!")

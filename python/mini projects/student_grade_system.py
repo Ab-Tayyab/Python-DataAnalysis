@@ -2,6 +2,8 @@ from statistics import mean
 import json
 import os
 
+# ================= FILE HANDLING =================
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 file_name = os.path.join(BASE_DIR, "files", "student_grade_system.json")
 
@@ -27,14 +29,17 @@ if not grades:
         '02':[70,80,51,66,71]
     }
 
-# design 
+
+# ================= GENERAL DESIGN =================
+
 
 def design_function(text):
     print("\n" + "-" * len(text))
     print(text)
     print("-" * len(text))
 
-# find student 
+# ================= FIND STUDENT =================
+
 
 def get_student():
     roll_no = input("Enter Roll No! ")
@@ -43,7 +48,8 @@ def get_student():
         return None
     return roll_no
 
-# add new grade 
+# ================= ADD NEW GRADE =================
+
 def add_new_record():
     s_RollNo = input("Enter student Rool No! 01, 02 and so on: ")
     if s_RollNo in grades:
@@ -60,8 +66,8 @@ def add_new_record():
         print("❌ Grade must be numbers")
 
 
+# ================= SHOW GRADE =================
 
-#show Grade
 
 def show_grade():
     try:
@@ -83,7 +89,8 @@ def show_grade():
         case _:
             print("❌ Invalid Choice")
 
-# calculate avg grade 
+# ================= CALCULATE AVERAGE GRADE =================
+
 
 def calculate_avg():
     try:
@@ -105,7 +112,8 @@ def calculate_avg():
         case _:
             print("❌ Invalid Choice")
 
-# find highest and lowest grade 
+# ================= FIND HIGHEST AND LOWEST GRADE =================
+
 
 def calculate_highest_lowest():
     try:
@@ -127,8 +135,8 @@ def calculate_highest_lowest():
         case _:
             print("❌ Invalid Choice")
 
+# ================= MENU =================
 
-#Menu
 def menu():
         print("""
 ==========================
@@ -142,8 +150,6 @@ def menu():
 ==========================
 """)
 
-
-# main program
 
 while True:
     menu()

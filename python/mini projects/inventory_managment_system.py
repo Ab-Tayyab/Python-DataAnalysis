@@ -1,6 +1,8 @@
 import json
 import os
 
+# ================= FILE HANDLING =================
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 file_name = os.path.join(BASE_DIR, "files", "inventory_management_system.json")
 
@@ -36,7 +38,9 @@ if not inventory:
 
 out_of_stock_products=set()
 
-# find category 
+
+# ================= FIND CATEGORY =================
+
 
 def get_category():
     category_name = input("Enter category name: ").strip().lower()
@@ -46,9 +50,10 @@ def get_category():
     return inventory[category_name]
 
 
-# show inventory 
+# ================= SHOW INVENTORY =================
+
+
 def show_inventory():
-    # all categories
     choice = input("Enter choice: 1 for show whole inventory, 2 for specific category: ").strip()
     if choice =="1": 
         print("\nInventory")
@@ -68,7 +73,8 @@ def show_inventory():
 
 
 
-# add category and product 
+# ================= ADD CATEGORY AND PRODUCT =================
+
 
 def add_inventory():
     category_name = input("Enter category name: ").strip().lower()
@@ -95,7 +101,8 @@ def add_inventory():
     print("Product added successfully!")
 
 
-# purchase product 
+# ================= PURCHASE PRODUCT =================
+
 
 def purchase_product():
     product_name = input(
@@ -134,9 +141,8 @@ def purchase_product():
     print("Product not found!")
 
 
+# ================= SHOW OUT-OF-STOCK PRODUCT =================
 
-
-# show out of stock product 
 
 def show_outOfStock_product():
     if not out_of_stock_products:
@@ -149,7 +155,8 @@ def show_outOfStock_product():
         print(f"{index}. {product}")
         
 
-#Menu
+# ================= MENU =================
+
 def menu():
         print("""
 ===========================
